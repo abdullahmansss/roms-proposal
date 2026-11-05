@@ -65,9 +65,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .login-logo{width:210px;max-width:70%;height:auto;display:block;margin:0 auto 6px}
 .screen.night .login-logo,.screen.night .brand-chip{background:#fff;border-radius:12px;padding:10px 14px}
 .brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;line-height:1.1}
-.tabs{display:flex;gap:4px;background:var(--surface-2);padding:3px;border-radius:10px;flex-wrap:wrap}
-.tabs button{padding:6px 12px;border-radius:8px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px}
-.tabs button[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:var(--shadow)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tabs button{padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:600;color:var(--fg);display:flex;align-items:center;gap:7px;cursor:pointer;transition:border-color .12s,color .12s,background .12s,box-shadow .12s}
+.tabs button .i{opacity:.75}
+.tabs button:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.tabs button:hover .i{opacity:1}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg);box-shadow:var(--shadow)}
+.tabs button[aria-selected="true"] .i{opacity:1}
+.tabs button[aria-selected="true"]::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand-orange);margin-inline-start:2px}
 .top-right{margin-inline-start:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .toggle{display:inline-flex;align-items:center;gap:8px;padding:5px 10px;border:1px solid var(--line);border-radius:999px;font-size:12.5px;font-weight:600;color:var(--muted);background:var(--surface)}
 .toggle .sw{width:30px;height:18px;border-radius:999px;background:var(--line);position:relative;transition:.15s}
@@ -529,7 +534,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:760px}
   .brand small{display:none} .brand{margin-inline-end:0}
   .top-row{gap:8px;min-height:48px}
   .tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%;order:3;flex:1 1 100%}
-  .tabs button{padding:6px 10px;font-size:12.5px;white-space:nowrap}
+  .tabs button{padding:6px 11px;font-size:12.5px;white-space:nowrap}
   .top-right{margin-inline-start:auto}
   .toggle span:not(.sw){display:none} .toggle{gap:6px}
   .crumbs{min-height:36px} .crumbs .fr{display:none} .crumbs .path{font-size:12px}
